@@ -2,18 +2,32 @@
 import { initializeApp } from "firebase/app";
 import { getFirestore } from "firebase/firestore";
 
+// const firebaseConfig = {
+//   apiKey: import.meta.env.VITE_FIREBASE_API_KEY,
+//   authDomain: import.meta.env.VITE_FIREBASE_AUTH_DOMAIN,
+//   projectId: import.meta.env.VITE_FIREBASE_PROJECT_ID,
+//   storageBucket: import.meta.env.VITE_FIREBASE_STORAGE_BUCKET,
+//   messagingSenderId: import.meta.env.VITE_FIREBASE_MESSAGING_SENDER_ID,
+//   appId: import.meta.env.VITE_FIREBASE_APP_ID,
+//   measurementId: import.meta.env.VITE_FIREBASE_MEASUREMENT_ID
+// };
+
 const firebaseConfig = {
-  apiKey: "AIzaSyB_H1qTvI0MUaDghorYFYL4_W_kpOI89kg",
-  authDomain: "ai-trip-pla-dc5fd.firebaseapp.com",
+  apiKey: import.meta.env.VITE_FIREBASE_API_KEY,
+  authDomain: import.meta.env.VITE_FIREBASE_AUTH_DOMAIN,
   projectId: "ai-trip-pla-dc5fd",
-  storageBucket: "ai-trip-pla-dc5fd.firebasestorage.app",
-  messagingSenderId: "190159957383",
-  appId: "1:190159957383:web:6df93dfb0c6f40259ab722",
-  measurementId: "G-GN99SGSK0C"
+  storageBucket: import.meta.env.VITE_FIREBASE_STORAGE_BUCKET,
+  messagingSenderId: import.meta.env.VITE_FIREBASE_MESSAGING_SENDER_ID,
+  appId: import.meta.env.VITE_FIREBASE_APP_ID,
+  measurementId: import.meta.env.VITE_FIREBASE_MEASUREMENT_ID
 };
 
+
+
 // Initialize Firebase
+console.log("Initializing Firebase with config:", firebaseConfig);
 const app = initializeApp(firebaseConfig);
+console.log("Firebase initialized successfully.");
 
 export const db = getFirestore(app);
 
